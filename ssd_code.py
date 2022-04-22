@@ -13,20 +13,12 @@ CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
 "dog", "horse", "motorbike", "person", "pottedplant", "sheep",
 "sofa", "train", "tvmonitor"]
 print('Total Number of classes are: {} \n'.format(len(CLASSES)-1))
-
-# Randomize with same pattern each time.
 np.random.seed(50)
-
-# Create the random list of colors of required size.
 COLORS = np.random.uniform(0, 255, size=(len(CLASSES),3))
-
-# Load the Model Weights.
 weights ='MobileNetSSD_deploy.caffemodel'
 
-# Load the googleNet Architecture.
+# Load the Model
 arch= 'MobileNetSSD_deploy.prototxt.txt'
-
-# Initialize the network.
 net = cv2.dnn.readNetFromCaffe(arch, weights)
 
 
